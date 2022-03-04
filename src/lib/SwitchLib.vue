@@ -8,9 +8,11 @@
 
 <script lang="ts">
 import {ref} from 'vue';
+import Button from '../components/Button.vue';
 
 export default {
   name: "SwitchLib",
+  components: {Button},
   setup() {
     const checked = ref(false)
     const toggle = () => {
@@ -38,11 +40,15 @@ export default {
     width: 18px;
     background: white;
     border-radius: 9px;
+    transition: left 250ms;
   }
   button.checked {
     background: blue;
   }
   button.checked > span {
     left: calc(100% - 18px - 2px);
+  }
+  button:focus {
+    outline: none;
   }
 </style>
