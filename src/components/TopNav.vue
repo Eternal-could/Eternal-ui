@@ -5,6 +5,7 @@
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
+    <span class="toggleAside"></span>
   </div>
 </template>
 
@@ -27,9 +28,11 @@ export default {
 .topNav {
   position: relative;
   z-index: 10;
-  background: pink;
+  background: Lavender;
   display: flex;
   padding: 16px;
+  justify-content: center;
+  align-items: center;
 
   > .logo {
     max-width: 6em;
@@ -43,6 +46,43 @@ export default {
 
     > li {
       margin: 0 1em;
+    }
+  }
+  > .toggleAside {
+    display: none;
+    width: 36px;
+    height: 6px;
+    background-color: #453654;
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    &::before,&::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      top: -12px;
+      background-color: #453654;
+    }
+    &::after {
+      top: 12px;
+      background-color: #453654;
+    }
+  }
+  @media (max-width: 500px) {
+    > .menu {
+      display: none;
+    }
+    > .logo {
+      margin: 0 auto;
+    }
+    > .toggleAside {
+      display: inline-block;
+
     }
   }
 }
