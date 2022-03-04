@@ -82,7 +82,6 @@ export default {
     }
     > .toggleAside {
       display: inline-block;
-
     }
   }
 }
