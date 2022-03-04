@@ -28,27 +28,34 @@ export default {
     height: 22px;
     width: 44px;
     border: none;
-    background: gray;
+    background: #bfbfbf;
     border-radius: 11px;
     position: relative;
+    > span {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      height: 18px;
+      width: 18px;
+      background: white;
+      border-radius: 9px;
+      transition: all 250ms;
+    }
+    &.checked {
+      background: #1890ff;
+      > span {
+        left: calc(100% - 18px - 2px);
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+    &:active{
+      > span {width: 22px;}
+    }
+    &.checked:active{
+      > span {width: 22px; margin-left: -4px;}
+    }
   }
-  span {
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    height: 18px;
-    width: 18px;
-    background: white;
-    border-radius: 9px;
-    transition: left 250ms;
-  }
-  button.checked {
-    background: blue;
-  }
-  button.checked > span {
-    left: calc(100% - 18px - 2px);
-  }
-  button:focus {
-    outline: none;
-  }
+
 </style>
