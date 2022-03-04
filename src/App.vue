@@ -1,15 +1,14 @@
 <template>
-  <div>hi</div>
-  <fir/>
+  <div>导航栏 |
+    <router-link to="/">Fir</router-link> |
+    <router-link to="/xxx">Fir2</router-link>
+  </div>
+  <router-view/>
 </template>
 
 <script>
-import fir from "./components/fir.vue";
 
 export default {
   name: 'App',
-  components: {
-    fir
-  }
 }
 </script>
