@@ -1,10 +1,14 @@
 <template>
-<h1>Switch文档</h1>
+  <div>
+    <SwitchLib/>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import SwitchLib from '../lib/SwitchLib.vue'
 export default {
-  name: "Switch"
+  name: "Switch",
+  components: {SwitchLib}
 }
 </script>
 
