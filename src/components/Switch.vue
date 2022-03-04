@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SwitchLib :value="y" @input="y = $event"/>
+    <SwitchLib v-model:value="y"/>
   </div>
 </template>
 
