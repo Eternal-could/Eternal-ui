@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import Button from "../components/Button";
 export default {
-  name: "SwitchLib"
+  name: "SwitchLib",
+  components: {Button}
 }
 </script>
 
@@ -25,5 +27,8 @@ export default {
     width: 18px;
     background: white;
     border-radius: 9px;
+  }
+  button:hover > span {
+    left: calc(100% - 18px - 2px);
   }
 </style>
