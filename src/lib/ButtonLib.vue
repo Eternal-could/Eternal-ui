@@ -1,7 +1,7 @@
 <template>
     <button
       class="wheel-button"
-      :class="`theme-${theme}`"
+      :class="{[`wheel-theme-${theme}`]:theme}"
     >
       <slot/>
     </button>
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;

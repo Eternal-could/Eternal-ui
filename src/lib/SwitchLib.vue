@@ -1,13 +1,12 @@
 <template>
-  <button
+  <button class="wheel-switch"
       @click="toggle"
-      :class="{checked:value}">
+      :class="{'wheel-checked':value}">
     <span></span>
   </button>
 </template>
 
 <script lang="ts">
-import {ref} from 'vue';
 
 export default {
   name: "SwitchLib",
@@ -23,8 +22,8 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-  button{
+<style lang="scss">
+.wheel-switch{
     height: 22px;
     width: 44px;
     border: none;
@@ -41,7 +40,7 @@ export default {
       border-radius: 9px;
       transition: all 250ms;
     }
-    &.checked {
+    &.wheel-checked {
       background: #1890ff;
       > span {
         left: calc(100% - 18px - 2px);
@@ -53,7 +52,7 @@ export default {
     &:active{
       > span {width: 22px;}
     }
-    &.checked:active{
+    &.wheel-checked:active{
       > span {width: 22px; margin-left: -4px;}
     }
   }
