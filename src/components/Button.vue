@@ -2,11 +2,10 @@
   <div>Button文档</div>
   <h1>示例1</h1>
   <div>
-    <ButtonLib
-        @click="onClick"
-        @focus="onClick"
-        @mouseover="onClick"
-    >你好</ButtonLib>
+    <ButtonLib>你好</ButtonLib>
+    <ButtonLib theme="button">你好</ButtonLib>
+    <ButtonLib theme="link">你好</ButtonLib>
+    <ButtonLib theme="text">你好</ButtonLib>
   </div>
 </template>
 
