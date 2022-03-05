@@ -1,15 +1,24 @@
 <template>
-  <button>
-    <slot/>
-  </button>
+  <div :size="size">
+    <button v-bind="$attrs">
+      <slot/>
+    </button>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: "ButtonLib"
+  name: "ButtonLib",
+  inheritAttrs: false,
+  setup(props, context) {
+    const {size,...rest} =  context.attrs
+    return {size, rest}
+  }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  div{
+    border: 1px solid red;
+  }
 </style>

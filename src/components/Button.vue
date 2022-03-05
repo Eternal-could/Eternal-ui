@@ -2,7 +2,11 @@
   <div>Button文档</div>
   <h1>示例1</h1>
   <div>
-    <ButtonLib>你好</ButtonLib>
+    <ButtonLib
+        @click="onClick"
+        @focus="onClick"
+        @mouseover="onClick"
+    >你好</ButtonLib>
   </div>
 </template>
 
@@ -10,7 +14,13 @@
 import ButtonLib from '../lib/ButtonLib.vue'
 export default {
   name: "Button",
-  components: {ButtonLib}
+  components: {ButtonLib},
+  setup() {
+    const onClick = ()=> {
+      console.log("hi");
+    }
+    return {onClick}
+  }
 }
 </script>
 
