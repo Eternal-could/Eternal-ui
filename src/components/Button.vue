@@ -1,13 +1,19 @@
 <template>
-<h1>Button文档</h1>
+  <div>Button文档</div>
+  <h1>示例1</h1>
+  <div>
+    <ButtonLib>你好</ButtonLib>
+  </div>
 </template>
 
-<script>
+<script lang="ts">
+import ButtonLib from '../lib/ButtonLib.vue'
 export default {
-  name: "Button"
+  name: "Button",
+  components: {ButtonLib}
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
