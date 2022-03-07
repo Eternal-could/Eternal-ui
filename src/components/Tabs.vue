@@ -1,10 +1,20 @@
 <template>
-<h1>Tabs文档</h1>
+  <h1>示例一</h1>
+  <TabsLib>
+    <TabLib title="导航1">内容1</TabLib>
+    <TabLib title="导航2">内容2</TabLib>
+  </TabsLib>
 </template>
 
-<script>
+<script lang="ts">
+import TabsLib from '../lib/TabsLib.vue'
+import TabLib from '../lib/TabLib.vue'
 export default {
-  name: "Tabs"
+  name: "Tabs",
+  components: {
+    TabsLib,
+    TabLib
+  }
 }
 </script>
 
