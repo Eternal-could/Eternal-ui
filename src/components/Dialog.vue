@@ -15,11 +15,14 @@
       <strong>加粗的标题</strong>
     </template>
   </DialogLib>
+  <h1>示例二</h1>
+  <ButtonLib @click="showDialog">show</ButtonLib>
 </template>
 
 <script lang="ts">
 import DialogLib from "../lib/DialogLib.vue";
 import ButtonLib from "../lib/ButtonLib.vue";
+import {openDialog} from '../lib/openDialog.ts';
 import {ref} from 'vue';
 export default {
   name: "Dialog",
@@ -34,11 +37,25 @@ export default {
     }
     const f2 = () => {
     }
+    const showDialog = () => {
+      openDialog({
+        title:'标题',
+        content: '你好',
+        ok() {
+          console.log('ok')
+        },
+        cancel() {
+          console.log('cancel');
+        }
+      })
+
+    }
     return {
       x,
       toggle,
       f1,
-      f2
+      f2,
+      showDialog
     }
   }
 }
