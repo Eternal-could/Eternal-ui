@@ -17,10 +17,12 @@ export const openDialog = (options) => {
                         close()
                     }
                 },
-                ok, cancel
+                ok,
+                cancel,
+                closeOnClickOverlay: false
             },{
-                title,
-                content
+                title:title,
+                content:content
             })
         }
     })
