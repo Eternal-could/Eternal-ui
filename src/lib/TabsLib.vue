@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import TabLib from './TabLib.vue'
-import {computed, onMounted, onUpdated, ref} from 'vue';
+import {onMounted, onUpdated, ref} from 'vue';
 export default {
   name: "TabsLib",
   props:{
@@ -59,12 +59,6 @@ export default {
         throw new Error('children component of TabsLib must be TabLib')
       }
     })
-    const current = computed(()=>{
-      console.log('review');
-      return  defaults.filter((tag)=>{
-        return  tag.props.title === props.selected
-      })[0]
-    })
     const titles = defaults.map((tag)=>{
       return tag.props.title
     })
@@ -74,7 +68,6 @@ export default {
     return {
       defaults,
       titles,
-      current,
       select,
       selectedItem,
       indicator,
