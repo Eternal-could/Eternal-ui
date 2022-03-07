@@ -1,16 +1,21 @@
 <template>
   <template v-if="visible">
-    <div class="wheel-dialog-overlay"></div>
+    <div
+        class="wheel-dialog-overlay"
+        @click="onClickOverlay"
+    ></div>
     <div class="wheel-dialog-wrapper">
       <div class="wheel-dialog">
-        <header>标题<span class="wheel-dialog-close"></span></header>
+        <header>标题
+          <span @click="close" class="wheel-dialog-close"></span>
+        </header>
         <main>
           <p>第一行内容</p>
           <p>第二行内容</p>
         </main>
         <footer>
-          <ButtonLib>OK</ButtonLib>
-          <ButtonLib>Cancel</ButtonLib>
+          <ButtonLib level="main" @click="ok">OK</ButtonLib>
+          <ButtonLib @click="cancel">Cancel</ButtonLib>
         </footer>
       </div>
     </div>
@@ -25,10 +30,45 @@ export default {
     visible: {
       type: Boolean,
       default: false
+    },
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: true
+    },
+    ok: {
+      type: Function
+    },
+    cancel: {
+      type: Function
     }
   },
   components: {
     ButtonLib
+  },
+  setup(props, context){
+    const close = ()=> {
+      context.emit('update:visible',false)
+    }
+    const onClickOverlay = () => {
+      if (props.closeOnClickOverlay) {
+        close()
+      }
+    }
+    const ok = () => {
+      if(props.ok?.() !== false) {
+        close()
+      }
+    }
+    const cancel = () => {
+      context.emit('cancel')
+      close()
+    }
+    return {
+      close,
+      onClickOverlay,
+      ok,
+      cancel
+    }
   }
 }
 </script>
