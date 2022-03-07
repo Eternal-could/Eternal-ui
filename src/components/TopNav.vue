@@ -27,7 +27,7 @@ export default {
 <style scoped lang="scss">
 .topNav {
   z-index: 10;
-  background: Lavender;
+  //background: Lavender;
   display: flex;
   padding: 16px;
   position: fixed;
