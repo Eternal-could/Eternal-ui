@@ -20,46 +20,47 @@
 </template>
 
 <script lang="ts">
-import DialogLib from "../lib/DialogLib.vue";
-import ButtonLib from "../lib/ButtonLib.vue";
+import DialogLib from '../lib/DialogLib.vue';
+import ButtonLib from '../lib/ButtonLib.vue';
 import {openDialog} from '../lib/openDialog.ts';
 import {ref} from 'vue';
+
 export default {
-  name: "Dialog",
+  name: 'Dialog',
   components: {DialogLib, ButtonLib},
   setup() {
-    const x = ref(false)
+    const x = ref(false);
     const toggle = () => {
-      x.value = !x.value
-    }
+      x.value = !x.value;
+    };
     const f1 = () => {
-      return false
-    }
+      return false;
+    };
     const f2 = () => {
-    }
+    };
     const showDialog = () => {
       openDialog({
-        title:'标题',
+        title: '标题',
         content: '你好',
         ok() {
-          console.log('ok')
+          console.log('ok');
         },
         cancel() {
           console.log('cancel');
         },
         closeOnClickOverlay: undefined
-      })
+      });
 
-    }
+    };
     return {
       x,
       toggle,
       f1,
       f2,
       showDialog
-    }
+    };
   }
-}
+};
 </script>
 
 <style lang="scss">
