@@ -15,7 +15,7 @@ import {ButtonLib, TabsLib, SwitchLib, DialogLib} from "Eternal-ui"
 
 ```
 <template>
-  <div><Button>按钮</Button></div>
+  <div><ButtonLib>按钮</ButtonLib></div>
 </template>
 <script>
 import {ButtonLib, TabsLib, SwitchLib, DialogLib} from "Eternal-ui"
