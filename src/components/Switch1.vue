@@ -1,3 +1,6 @@
+<demo>
+常规用法
+</demo>
 <template>
   <SwitchLib v-model:value="bool"/>
 </template>

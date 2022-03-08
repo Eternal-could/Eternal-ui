@@ -1,3 +1,6 @@
+<demo>
+支持 disabled
+</demo>
 <template>
   <SwitchLib v-model:value="bool" disabled/>
 </template>
