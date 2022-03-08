@@ -1,0 +1,6 @@
+export {default as SwitchLib} from './SwitchLib.vue'
+export {default as ButtonLib} from './ButtonLib.vue'
+export {default as TabsLib} from './TabsLib.vue'
+export {default as TabLib} from './TabLib.vue'
+export {default as DialogLib} from './DialogLib.vue'
+export {openDialog as openDialog} from './openDialog'
