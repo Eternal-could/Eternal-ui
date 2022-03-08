@@ -4,7 +4,6 @@ import Switch from './components/Switch.vue'
 import Button from './components/Button.vue'
 import Dialog from './components/Dialog.vue'
 import Tabs from './components/Tabs.vue'
-import Docroot from './components/Docroot.vue'
 import Intro from './views/Intro.vue'
 import GetStarted from './views/GetStarted.vue'
 import Install from './views/Install.vue'
@@ -25,7 +24,7 @@ export const router = createRouter({
             children: [
                 {
                     path:'',
-                    component: Docroot
+                    redirect: '/doc/intro'
                 },
                 {
                     path:'intro',

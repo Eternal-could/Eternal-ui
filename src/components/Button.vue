@@ -1,77 +1,27 @@
 <template>
-  <div>Button文档</div>
-  <h1>示例1</h1>
-  <div>
-    <ButtonLib theme="button">你好</ButtonLib>
-    <ButtonLib theme="button" level="main">你好</ButtonLib>
-    <ButtonLib theme="link" level="success">你好</ButtonLib>
-    <ButtonLib theme="text" level="danger">你好</ButtonLib>
-  </div>
-  <br>
-  <h1>示例2</h1>
-  <div>
-    <ButtonLib size="small">你好</ButtonLib>
-    <ButtonLib level="main">你好</ButtonLib>
-    <ButtonLib size="big" level="danger">你好</ButtonLib>
-  </div>
-  <div>
-    <ButtonLib size="small" theme="link">你好</ButtonLib>
-    <ButtonLib theme="link" level="main">你好</ButtonLib>
-    <ButtonLib size="big" theme="link" level="danger">你好</ButtonLib>
-  </div>
-  <div>
-    <ButtonLib size="small" theme="text">你好</ButtonLib>
-    <ButtonLib theme="text" level="main">你好</ButtonLib>
-    <ButtonLib size="big" theme="text" level="danger">你好</ButtonLib>
-  </div>
-  <br>
-  <h1>示例3</h1>
-  <div>
-    <ButtonLib>普通按钮</ButtonLib>
-    <ButtonLib level="main">主要按钮</ButtonLib>
-    <ButtonLib level="success">成功按钮</ButtonLib>
-    <ButtonLib level="warning">警告按钮</ButtonLib>
-    <ButtonLib level="danger">危险按钮</ButtonLib>
-  </div>
-  <div>
-    <ButtonLib theme="link">普通链接按钮</ButtonLib>
-    <ButtonLib level="main" theme="link">主要链接按钮</ButtonLib>
-    <ButtonLib level="success" theme="link">成功链接按钮</ButtonLib>
-    <ButtonLib level="warning" theme="link">警告链接按钮</ButtonLib>
-    <ButtonLib level="danger" theme="link">危险链接按钮</ButtonLib>
-  </div>
-  <div>
-    <ButtonLib theme="text">普通文本按钮</ButtonLib>
-    <ButtonLib level="main" theme="text">主要文本按钮</ButtonLib>
-    <ButtonLib level="success" theme="text">成功文本按钮</ButtonLib>
-    <ButtonLib level="warning" theme="text">警告文本按钮</ButtonLib>
-    <ButtonLib level="danger" theme="text">危险文本按钮</ButtonLib>
-  </div>
-  <br>
-  <h1>示例4</h1>
-  <div>
-    <ButtonLib disabled>禁用按钮</ButtonLib>
-    <ButtonLib theme="link" disabled>禁用链接按钮</ButtonLib>
-    <ButtonLib theme="text" disabled>禁用文本按钮</ButtonLib>
-  </div>
-  <br>
-  <h1>示例5</h1>
-  <div>
-    <ButtonLib loading>加载中</ButtonLib>
-    <ButtonLib>加载完毕</ButtonLib>
-  </div>
+  <h1>Button 组件</h1>
+  <Demo :component="Button1"></Demo>
+  <Demo :component="Button2"></Demo>
+  <Demo :component="Button3"></Demo>
+  <Demo :component="Button4"></Demo>
+  <Demo :component="Button5"></Demo>
 </template>
 
 <script lang="ts">
-import ButtonLib from '../lib/ButtonLib.vue'
+import Demo from '../components/Demo.vue'
+import Button1 from '../components/Button1.vue'
+import Button2 from '../components/Button2.vue'
+import Button3 from '../components/Button3.vue'
+import Button4 from '../components/Button4.vue'
+import Button5 from '../components/Button5.vue'
 export default {
   name: "Button",
-  components: {ButtonLib},
+  components: {Demo},
   setup() {
     const onClick = ()=> {
       console.log("hi");
     }
-    return {onClick}
+    return {onClick, Button1, Button2, Button3, Button4, Button5}
   }
 }
 </script>

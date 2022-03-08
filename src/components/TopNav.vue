@@ -1,7 +1,7 @@
 <template>
   <div class="topNav">
     <div class="logo">
-      <svg class="icon">
+      <svg class="icon" @click="homePage">
         <use xlink:href="#icon-wheel"></use>
       </svg>
     </div>
@@ -34,7 +34,10 @@ export default {
     const toggleAside = () => {
       asideVisible.value = !asideVisible.value;
     }
-    return {toggleAside}
+    const homePage = () => {
+      window.location.href = '/';
+    }
+    return {toggleAside, homePage}
   }
 }
 </script>
