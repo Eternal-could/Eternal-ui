@@ -4,7 +4,7 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch1 />
+        <component :is="Switch1"></component>
       </div>
       <div class="demo-actions">
         <ButtonLib>查看代码</ButtonLib>
@@ -16,7 +16,7 @@
     <div class="demo">
       <h2>支持 disabled </h2>
       <div class="demo-component">
-        <Switch2/>
+        <component :is="Switch2"></component>
       </div>
       <div class="demo-actions">
         <ButtonLib>查看代码</ButtonLib>
