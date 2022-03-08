@@ -1,33 +1,36 @@
 <template>
-  <div>
-    <h1>Switch 组件示例 </h1>
-    <Demo :component="Switch1"/>
-    <Demo :component="Switch2"/>
+  <div class="demo">
+    <h2>{{ component.__sourceCodeTitle }}</h2>
+    <div class="demo-component">
+      <component :is="component"></component>
+    </div>
+    <div class="demo-actions">
+      <ButtonLib>查看代码</ButtonLib>
+    </div>
+    <div class="demo-code">
+      <pre class="language-html" v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')"></pre>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import SwitchLib from '../lib/SwitchLib.vue'
 import ButtonLib from '../lib/ButtonLib.vue'
-import Demo from '../components/Demo.vue'
-import Switch1 from './Switch1.vue'
-import Switch2 from './Switch2.vue'
 import 'prismjs';
 import 'prismjs/themes/prism-okaidia.css'
 const Prism = (window as any).Prism
-
-import {ref} from 'vue';
 export default {
-  name: "Switch",
-  components: {ButtonLib, SwitchLib, Switch1, Switch2, Demo},
+  name: "Demo",
+  props: {
+    component: Object
+  },
+  components:{ButtonLib},
   setup() {
-    const bool = ref(false)
-    return {bool, Switch1, Switch2, Prism}
+    return {Prism}
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
