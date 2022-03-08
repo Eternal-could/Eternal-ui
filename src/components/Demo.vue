@@ -5,10 +5,10 @@
       <component :is="component"></component>
     </div>
     <div class="demo-actions">
-      <ButtonLib>查看代码</ButtonLib>
+      <ButtonLib @click="codeVisible = !codeVisible">查看代码</ButtonLib>
     </div>
-    <div class="demo-code">
-      <pre class="language-html" v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'html')"></pre>
+    <div class="demo-code" v-if="codeVisible">
+      <pre class="language-html" v-html="html"></pre>
     </div>
   </div>
 </template>
@@ -17,6 +17,7 @@
 import ButtonLib from '../lib/ButtonLib.vue'
 import 'prismjs';
 import 'prismjs/themes/prism-okaidia.css'
+import {computed, ref} from 'vue';
 const Prism = (window as any).Prism
 export default {
   name: "Demo",
@@ -24,8 +25,12 @@ export default {
     component: Object
   },
   components:{ButtonLib},
-  setup() {
-    return {Prism}
+  setup(props) {
+    const html = computed(()=>{
+      return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
+    })
+    const codeVisible = ref(false)
+    return {Prism,html,codeVisible}
   }
 }
 </script>
